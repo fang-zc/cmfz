@@ -54,4 +54,11 @@ public class CmfzApplicationTests {
         }
 
     }
+    @Test
+    public void test3() {
+        Admin admin = new Admin();
+        admin.setUsername("admin");
+        Admin selectOne = adminDAO.selectOne(admin);
+        System.out.println(selectOne);
+    }
 }
