@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 全限定名 -->
+<mapper namespace="com.fzc.dao.UserDAO">
+    <!--    Integer queryGirlPerviousFirst(); //前第一周女-->
+    <select id="queryGirlPerviousFirst" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date) &lt;7 and c_sex='女'
+    </select>
+    <!--    Integer queryGirlPerviousSecond(); //前第二周女-->
+    <select id="queryGirlPerviousSecond" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date)&lt;14 and datediff(now(),c_create_date)>=7 and c_sex='女'
+    </select>
+    <!--    Integer queryGirlPerviousThird(); //前第三周女-->
+    <select id="queryGirlPerviousThird" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date)&lt;21 and datediff(now(),c_create_date)>=14 and c_sex='女'
+    </select>
+    <!--    Integer queryBoyPerviousFirst(); //前第一周男-->
+    <select id="queryBoyPerviousFirst" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date) &lt;7 and c_sex='男'
+    </select>
+    <!--    Integer queryBoyPerviousSecond(); //前第二周男-->
+    <select id="queryBoyPerviousSecond" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date)&lt;14 and datediff(now(),c_create_date)>=7 and c_sex='男'
+    </select>
+    <!--    Integer queryBoyPerviousThird(); //前第三周男-->
+    <select id="queryBoyPerviousThird" resultType="Integer">
+        select count(*) from c_user where datediff(now(),c_create_date)&lt;21 and datediff(now(),c_create_date)>=14 and c_sex='男'
+    </select>
+</mapper>
