@@ -63,7 +63,7 @@ public class CmfzApplicationTests {
     }
 
     @Test
-    public void test4() {
+    public void test5() {
         Admin admin = new Admin();
         admin.setUsername("admin");
         Admin selectOne = adminDAO.selectOne(admin);
